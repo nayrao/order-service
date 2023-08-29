@@ -23,8 +23,16 @@ public class OrderController {
 	public ResponseEntity<String> saveOrder(@RequestBody OrderRequest orderRequest) {
 		String saveOrder = orderService.saveOrder(orderRequest);
 		return new ResponseEntity<String>(saveOrder, HttpStatus.CREATED);
-
+	
 	}
+	
+	@GetMapping("/welcome")
+	public String bug100() {
+		String s= "sai@ krishna, $manchala"; //saikrishnamanchala
+		//remove spaces and special characters
+		return "Welcome to Chandalur";
+	}
+	
     @GetMapping("/bug101")
 	public String bug101() {
 		return "BUG 101 issue";
